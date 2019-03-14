@@ -71,13 +71,14 @@ namespace figuras
     }
     class Triangulo:Figura
     {
-        public Triangulo (Vector2d pos):base(pos)
+        private int altura;
+        public Triangulo (Vector2d pos,int altura):base(pos)
         {
-
+            this.altura=altura;
         }
         public Triangulo():base()
         {
-
+            this.altura=3;
         }
         public override void Dibuja() 
      {
@@ -95,7 +96,7 @@ namespace figuras
             List<Figura> figuras = new List<Figura>();
             figuras.Add(new Circulo());
             figuras.Add(new Rectangulo(new Vector2d(200,200) ));
-            figuras.Add(new Triangulo(new Vector2d(300,300)));
+            figuras.Add(new Triangulo());
             foreach(Figura f in figuras)
             f.Dibuja();
         }
